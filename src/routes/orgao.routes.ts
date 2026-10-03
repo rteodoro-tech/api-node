@@ -4,6 +4,6 @@ import { OrgaoController } from '../controllers/OrgaoController.js';
 const orgaoRoutes = Router();
 const orgaoController = new OrgaoController();
 
-orgaoRoutes.get('/orgaos', (req, res) => orgaoController.getAllOrgaos(req, res));
+orgaoRoutes.get('/api/orgaos', (req, res) => orgaoController.getAllOrgaos(req, res));
 
 export { orgaoRoutes };
