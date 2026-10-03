@@ -9,8 +9,25 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const allowedOrigins = [
+  'http://localhost:5173', // React rodando localmente no Vite
+  'https://meusite.com.br'  // Seu domínio final na Hostinger/Vercel
+];
+
 // Middlewares
-app.use(cors()); // Libera o CORS para qualquer origem durante o dev
+app.use(cors({
+  origin: (origin, callback) => {
+    // Permite requisições sem origin (como apps mobile/Postman) ou dentro da lista permitida
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Acesso bloqueado pela política de CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'x-api-key']
+}));
+
 app.use(express.json()); // Habilita o parse de JSON no body das requisições
 
 // Rotas
