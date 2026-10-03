@@ -1,0 +1,12 @@
+# Dependências do Node (não devem ir para o GitHub)
+node_modules/
+
+# Arquivos de build/compilação
+dist/
+
+# Arquivos com senhas/chaves secretas
+.env
+
+# Logs e arquivos do sistema
+*.log
+.DS_Store
