@@ -31,8 +31,8 @@ app.use(cors({
 app.use(express.json()); // Habilita o parse de JSON no body das requisições
 
 // Rotas
-app.use('/api', userRoutes);
-app.use('/api', orgaoRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/orgaos', orgaoRoutes);
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando localmente em http://localhost:${PORT}`);
