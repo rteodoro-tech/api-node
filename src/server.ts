@@ -10,8 +10,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const allowedOrigins = [
-  'http://localhost:5173', // React rodando localmente no Vite
-  'https://meusite.com.br'  // Seu domínio final na Hostinger/Vercel
+  'http://localhost:3000', // React rodando localmente no Vite
+  'https://testeapi.sindiserfrj.org.br/'  // Seu domínio final na Hostinger/Vercel
 ];
 
 // Middlewares
