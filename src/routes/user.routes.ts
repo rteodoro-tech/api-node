@@ -7,6 +7,6 @@ const userController = new UserController();
 
 userRoutes.use(checkApiKey);
 
-userRoutes.get('/users', (req, res) => userController.getUsers(req, res));
+userRoutes.get('/', (req, res) => userController.getUsers(req, res));
 
 export { userRoutes };
